@@ -9,12 +9,12 @@ import (
 
 func checkError(err error) {
 	if err != nil {
-		fmt.Println("Fatal error :", err.Error())
+		fmt.Println("Fatal error: ", err.Error())
 		os.Exit(1)
 	}
 }
 
-func nowtime() string {
+func nowTime() string {
 	return time.Now().String()
 }
 
@@ -27,17 +27,16 @@ func main() {
 	checkError(err)
 	i := 0
 	for {
-		myconn, err := mylistener.Accept()
+		myConn, err := mylistener.Accept()
 		fmt.Printf("myconn ")
 		if err != nil {
 			continue
 		}
 		i++
 
-		nowTime := nowtime()
-		fmt.Printf("request no %d return time:%s \n", i, nowTime)
-		myconn.Write([]byte(nowTime))
-		myconn.Close()
-
+		nowTime := nowTime()
+		fmt.Printf("request no %d return time: %s \n", i, nowTime)
+		myConn.Write([]byte(nowTime))
+		myConn.Close()
 	}
 }

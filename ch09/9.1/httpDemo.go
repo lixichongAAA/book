@@ -18,6 +18,6 @@ func sayHi(w http.ResponseWriter, r *http.Request) {
 
 type ThisHandler struct{}
 
-func (m *ThisHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (m *ThisHandler) Serve_HTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ThisHandler's ServeHTTP"))
 }
